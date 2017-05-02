@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="C:/repository/mysql-connector-java-5.1.38.jar"/>
+
+	<context id="mysql" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+			
+        <!-- mySql -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/world" 
+			userId="seesawin" password="seesaw1688" />
+		
+		<!-- model -->
+		<javaModelGenerator targetPackage="ts.persistence" targetProject="MyBatis-demo/src/main/java" >
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		<!-- SQL -->
+		<sqlMapGenerator targetPackage="ts.mapper" targetProject="MyBatis-demo/src/main/resources" />
+		
+		<!-- interface -->
+		<javaClientGenerator targetPackage="ts.mapper" targetProject="MyBatis-demo/src/main/java" type="XMLMAPPER">
+			<property name="type" value="XMLMAPPER" />
+		</javaClientGenerator>
+		
+		<table tableName="city"/>
+		<table tableName="country"/>
+		<table tableName="countrylanguage"/>
+		
+	</context>
+</generatorConfiguration>
