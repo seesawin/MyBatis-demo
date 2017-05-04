@@ -26,7 +26,7 @@ public class MyBatisSqlSessionFactory {
 	}
 	
 	public static SqlSession openSession() {
-		return getSqlSessionFactory().openSession(true);
+		return getSqlSessionFactory().openSession();
 	}
 	
 	public static SqlSession openBatchSession() {
